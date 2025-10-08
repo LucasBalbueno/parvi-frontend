@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -41,11 +41,19 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  --font-title: var(--font-paytone);
+  --font-primary: var(--font-poppins);
+
+  --color-lightpurple: var(--light-primary);
+  --color-darkpurple: var(--dark-primary);
+  --color-greensuccess: var(--green-success);
+  --color-redalert: var(--red-alert);
+  --color-whiteinput: var(--background-input);
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -76,6 +84,17 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  --font-poppins: 'Poppins', sans-serif;
+  --font-paytone: 'PaytoneOne', sans-serif;
+
+  --light-primary: #623bba;
+  --dark-primary: #34318e;
+  --gradient-purple: linear-gradient(135deg, var(--dark-primary) 0%, var(--light-primary) 100%);
+  --green-success: #32b043;
+  --red-alert: #ff0004;
+  --background: #f0f2ed;
+  --background-input: #d9d9d9;
 }
 
 .dark {
@@ -110,6 +129,100 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  --font-poppins: 'Poppins', sans-serif;
+  --font-paytone: 'PaytoneOne', sans-serif;
+
+  --light-primary: #623bba;
+  --dark-primary: #34318e;
+  --gradient-purple: linear-gradient(135deg, var(--dark-primary) 0%, var(--light-primary) 100%);
+  --green-success: #32b043;
+  --red-alert: #ff0004;
+  --background: #121214;
+  --background-input: #1a1a1e;
+}
+
+@font-face {
+  font-family: 'PaytoneOne';
+  src: url('/fonts/PaytoneOne-Regular.ttf') format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@layer utilities {
+  .bg-gradient-purple {
+    background: var(--gradient-purple);
+  }
+
+  .text-gradient-purple {
+    background: var(--gradient-purple);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
 }
 
 @layer base {
@@ -117,6 +230,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-primary;
   }
 }
