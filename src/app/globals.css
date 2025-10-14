@@ -223,6 +223,26 @@
     -webkit-text-fill-color: transparent;
     color: transparent;
   }
+
+  .hover-buttons-purple:hover {
+    background-color: var(--light-primary) !important;
+  }
+
+  .hover-buttons-red:hover {
+    background-color: #ff0004 !important;
+  }
+
+  .hover-buttons-purple:hover .hover-text-white {
+    color: #ffffff !important;
+  }
+
+  .hover-buttons-red:hover .hover-text-white {
+    color: #ffffff !important;
+  }
+
+  .hover-trigger:hover .hover-color-white {
+    color: #ffffff;
+  }
 }
 
 @layer base {
@@ -231,14 +251,5 @@
   }
   body {
     @apply bg-background text-foreground font-primary;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }

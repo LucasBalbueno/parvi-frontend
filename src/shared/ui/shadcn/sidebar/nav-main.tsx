@@ -38,8 +38,12 @@ export function NavMain({
       <SidebarMenu>
         {items.map((item) => (
           <Collapsible key={item.title} asChild defaultOpen={item.isActive}>
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild tooltip={item.title}>
+            <SidebarMenuItem className="hover-trigger">
+              <SidebarMenuButton
+                asChild
+                tooltip={item.title}
+                className="hover:bg-lightpurple hover:text-white transition duration-400"
+              >
                 <a href={item.url}>
                   <item.icon />
                   <span>{item.title}</span>
@@ -49,11 +53,11 @@ export function NavMain({
                 <>
                   <CollapsibleTrigger asChild>
                     <SidebarMenuAction
-                      className={`data-[state=open]:rotate-90 ${
+                      className={`data-[state=open]:rotate-90 hover:bg-lightpurple transition duration-400 hover-trigger ${
                         item.items.length <= 0 ? 'hidden' : ''
                       }`}
                     >
-                      <ChevronRight />
+                      <ChevronRight className="hover-color-white transition duration-400" />
                       <span className="sr-only">Toggle</span>
                     </SidebarMenuAction>
                   </CollapsibleTrigger>
@@ -61,7 +65,10 @@ export function NavMain({
                     <SidebarMenuSub>
                       {item.items?.map((subItem) => (
                         <SidebarMenuSubItem key={subItem.title}>
-                          <SidebarMenuSubButton asChild>
+                          <SidebarMenuSubButton
+                            asChild
+                            className="hover:bg-lightpurple hover:text-white transition duration-400"
+                          >
                             <a href={subItem.url}>
                               <span>{subItem.title}</span>
                             </a>

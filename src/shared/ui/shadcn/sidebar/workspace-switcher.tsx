@@ -42,7 +42,7 @@ export function WorkSpaceSwitcher({
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
-              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground hover:bg-lightpurple hover:text-white transition duration-400"
             >
               <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
                 <activeTeam.logo className="size-4" />
@@ -65,21 +65,22 @@ export function WorkSpaceSwitcher({
               <DropdownMenuItem
                 key={workspace.name}
                 onClick={() => setActiveTeam(workspace)}
-                className="gap-2 p-2"
+                className="gap-2 p-2 hover-buttons-purple transition duration-400"
               >
                 <div className="flex size-6 items-center justify-center rounded-md border">
-                  <workspace.logo className="size-3.5 shrink-0" />
+                  <workspace.logo className="size-3.5 shrink-0 hover-text-white transition duration-400" />
                 </div>
-                {workspace.name}
-                <DropdownMenuShortcut>⌘{index + 1}</DropdownMenuShortcut>
+                <p className="hover-text-white transition duration-400">{workspace.name}</p>
               </DropdownMenuItem>
             ))}
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="gap-2 p-2">
+            <DropdownMenuItem className="gap-2 p-2 hover-buttons-purple transition duration-400">
               <div className="flex size-6 items-center justify-center rounded-md border bg-transparent">
-                <Plus className="size-4" />
+                <Plus className="size-4 hover-text-white transition duration-400" />
               </div>
-              <div className="text-muted-foreground font-medium">Add team</div>
+              <div className="text-muted-foreground font-medium hover-text-white transition duration-400">
+                Add team
+              </div>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

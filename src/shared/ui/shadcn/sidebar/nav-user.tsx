@@ -39,7 +39,7 @@ export function NavUser({
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
-              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground bg-background hover:bg-lightpurple hover:text-white transition duration-400"
             >
               <Avatar className="h-8 w-8 rounded-lg">
                 <AvatarImage src={user.avatar} alt={user.name} />
@@ -76,25 +76,25 @@ export function NavUser({
                 <Sparkles />
                 Upgrade to Pro
               </DropdownMenuItem> */}
-              <DropdownMenuItem>
-                <MdAccountCircle color="#000000" />
-                My Account
+              <DropdownMenuItem className="hover-buttons-purple transition duration-400">
+                <MdAccountCircle className="text-black hover-text-white transition duration-400" />
+                <p className="hover-text-white transition duration-400">My Account</p>
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuGroup>
-              <DropdownMenuItem>
-                <FaGear color="#000000" />
-                Preferences
+              <DropdownMenuItem className="hover-buttons-purple transition duration-400">
+                <FaGear className="text-black hover-text-white transition duration-400" />
+                <p className="hover-text-white transition duration-400">Preferences</p>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <MdLocalActivity color="#000000" />
-                Activity
+              <DropdownMenuItem className="hover-buttons-purple transition duration-400">
+                <MdLocalActivity className="text-black hover-text-white transition duration-400" />
+                <p className="hover-text-white transition duration-400">Activity</p>
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
-              <MdLogout color="#000000" />
-              Log out
+            <DropdownMenuItem className="hover-buttons-red transition duration-400">
+              <MdLogout className="text-black hover-text-white transition duration-400" />
+              <p className="hover-text-white transition duration-400">Log out</p>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
