@@ -38,11 +38,11 @@ export function NavMain({
       <SidebarMenu>
         {items.map((item) => (
           <Collapsible key={item.title} asChild defaultOpen={item.isActive}>
-            <SidebarMenuItem className="hover-trigger">
+            <SidebarMenuItem className="hover-dropdown-sidebar">
               <SidebarMenuButton
                 asChild
                 tooltip={item.title}
-                className="hover:bg-lightpurple hover:text-white transition duration-400"
+                className="hover:bg-lightpurple hover:text-light transition duration-400"
               >
                 <a href={item.url}>
                   <item.icon />
@@ -53,11 +53,11 @@ export function NavMain({
                 <>
                   <CollapsibleTrigger asChild>
                     <SidebarMenuAction
-                      className={`data-[state=open]:rotate-90 hover:bg-lightpurple transition duration-400 hover-trigger ${
+                      className={`data-[state=open]:rotate-90 hover:bg-lightpurple transition duration-400 hover-dropdown-sidebar ${
                         item.items.length <= 0 ? 'hidden' : ''
                       }`}
                     >
-                      <ChevronRight className="hover-color-white transition duration-400" />
+                      <ChevronRight className="hover-text-sidebar transition duration-400" />
                       <span className="sr-only">Toggle</span>
                     </SidebarMenuAction>
                   </CollapsibleTrigger>
@@ -67,7 +67,7 @@ export function NavMain({
                         <SidebarMenuSubItem key={subItem.title}>
                           <SidebarMenuSubButton
                             asChild
-                            className="hover:bg-lightpurple hover:text-white transition duration-400"
+                            className="hover:bg-lightpurple hover:text-light transition duration-400"
                           >
                             <a href={subItem.url}>
                               <span>{subItem.title}</span>

@@ -27,7 +27,7 @@ export function NavSecondary({
               <SidebarMenuButton
                 asChild
                 size="sm"
-                className="hover:bg-lightpurple hover:text-white transition duration-400"
+                className="hover:bg-lightpurple hover:text-light transition duration-400"
               >
                 <a href={item.url}>
                   <item.icon />

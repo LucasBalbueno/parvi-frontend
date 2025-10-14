@@ -3,7 +3,6 @@
 import * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva, VariantProps } from 'class-variance-authority';
-import { PanelLeftIcon } from 'lucide-react';
 
 import { useIsMobile } from '@/src/shared/hooks/use-mobile';
 import { cn } from '@/lib/utils';
@@ -24,6 +23,8 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/src/shared/ui/shadcn/tooltip';
+import { FaArrowLeft } from 'react-icons/fa6';
+import { IoMenu } from 'react-icons/io5';
 
 const SIDEBAR_COOKIE_NAME = 'sidebar_state';
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
@@ -251,7 +252,7 @@ function Sidebar({
 }
 
 function SidebarTrigger({ className, onClick, ...props }: React.ComponentProps<typeof Button>) {
-  const { toggleSidebar } = useSidebar();
+  const { toggleSidebar, state } = useSidebar();
 
   return (
     <Button
@@ -259,14 +260,23 @@ function SidebarTrigger({ className, onClick, ...props }: React.ComponentProps<t
       data-slot="sidebar-trigger"
       variant="ghost"
       size="icon"
-      className={cn('size-7', className)}
+      className={cn(
+        'absolute bg-lightpurple hover:bg-darkpurple cursor-pointer rounded-r-2xl rounded-l-none top-2.5 transition duration-400',
+        className,
+      )}
       onClick={(event) => {
         onClick?.(event);
         toggleSidebar();
       }}
       {...props}
     >
-      <PanelLeftIcon />
+      <IoMenu className="sm:hidden text-light size-6 mr-1.5" />
+      <FaArrowLeft
+        className={cn(
+          'hidden sm:block text-light size-3.5 transition-transform duration-400',
+          state === 'collapsed' && 'rotate-180',
+        )}
+      />
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   );

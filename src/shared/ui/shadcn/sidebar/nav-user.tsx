@@ -39,7 +39,7 @@ export function NavUser({
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
-              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground bg-background hover:bg-lightpurple hover:text-white transition duration-400"
+              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground bg-background hover:bg-lightpurple hover:text-light transition duration-400"
             >
               <Avatar className="h-8 w-8 rounded-lg">
                 <AvatarImage src={user.avatar} alt={user.name} />
@@ -76,25 +76,25 @@ export function NavUser({
                 <Sparkles />
                 Upgrade to Pro
               </DropdownMenuItem> */}
-              <DropdownMenuItem className="hover-buttons-purple transition duration-400">
-                <MdAccountCircle className="text-black hover-text-white transition duration-400" />
-                <p className="hover-text-white transition duration-400">My Account</p>
+              <DropdownMenuItem className="hover-buttons-sidebar transition duration-400">
+                <MdAccountCircle className="text-black hover-text-sidebar transition duration-400" />
+                <p className="hover-text-sidebar transition duration-400">My Account</p>
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuGroup>
-              <DropdownMenuItem className="hover-buttons-purple transition duration-400">
-                <FaGear className="text-black hover-text-white transition duration-400" />
-                <p className="hover-text-white transition duration-400">Preferences</p>
+              <DropdownMenuItem className="hover-buttons-sidebar transition duration-400">
+                <FaGear className="text-black hover-text-sidebar transition duration-400" />
+                <p className="hover-text-sidebar transition duration-400">Preferences</p>
               </DropdownMenuItem>
-              <DropdownMenuItem className="hover-buttons-purple transition duration-400">
-                <MdLocalActivity className="text-black hover-text-white transition duration-400" />
-                <p className="hover-text-white transition duration-400">Activity</p>
+              <DropdownMenuItem className="hover-buttons-sidebar transition duration-400">
+                <MdLocalActivity className="text-black hover-text-sidebar transition duration-400" />
+                <p className="hover-text-sidebar transition duration-400">Activity</p>
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="hover-buttons-red transition duration-400">
-              <MdLogout className="text-black hover-text-white transition duration-400" />
-              <p className="hover-text-white transition duration-400">Log out</p>
+            <DropdownMenuItem className="hover-button-logout transition duration-400">
+              <MdLogout className="text-black hover-text-sidebar transition duration-400" />
+              <p className="hover-text-sidebar transition duration-400">Log out</p>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

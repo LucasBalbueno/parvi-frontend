@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 import { FaCirclePlus } from 'react-icons/fa6';
 import {
   IoCalendarNumberSharp,
@@ -14,18 +16,20 @@ import { LuGalleryVerticalEnd } from 'react-icons/lu';
 import { NavMain } from '@/src/shared/ui/shadcn/sidebar/nav-main';
 import { NavSecondary } from '@/src/shared/ui/shadcn/sidebar/nav-secondary';
 import { NavUser } from '@/src/shared/ui/shadcn/sidebar/nav-user';
-import { WorkSpaceSwitcher } from '@/src/shared/ui/shadcn/sidebar/workspace-switcher';
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
+  useSidebar,
 } from '@/src/shared/ui/shadcn/sidebar/sidebar';
+import ParviLogo from '@/public/images/LogoParvi.svg';
+import ParviLogoCompact from '@/public/images/LogoParviCompact.svg';
 
 const data = {
   user: {
-    name: 'Exemple user',
+    name: 'Example user',
     email: 'm@example.com',
     avatar: '/avatars/shadcn.jpg',
   },
@@ -120,11 +124,17 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { state } = useSidebar();
+
   return (
     <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader>
-        <WorkSpaceSwitcher workspaces={data.workspaces} />
-      </SidebarHeader>
+      <div className="w-full p-2 h-15 bg-gradient-purple flex items-center justify-center">
+        {state === 'collapsed' ? (
+          <Image src={ParviLogoCompact} alt="Parvi Logo Compacta" className="h-8" />
+        ) : (
+          <Image src={ParviLogo} alt="Parvi Logo" className="w-7/12" />
+        )}
+      </div>
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />

@@ -47,6 +47,8 @@
 
   --color-lightpurple: var(--light-primary);
   --color-darkpurple: var(--dark-primary);
+  --color-light: var(--color-light);
+  --color-dark: var(--color-dark);
   --color-greensuccess: var(--green-success);
   --color-redalert: var(--red-alert);
   --color-whiteinput: var(--background-input);
@@ -91,6 +93,8 @@
   --light-primary: #623bba;
   --dark-primary: #34318e;
   --gradient-purple: linear-gradient(135deg, var(--dark-primary) 0%, var(--light-primary) 100%);
+  --color-light: #ffffff;
+  --color-dark: #000000;
   --green-success: #32b043;
   --red-alert: #ff0004;
   --background: #f0f2ed;
@@ -136,6 +140,8 @@
   --light-primary: #623bba;
   --dark-primary: #34318e;
   --gradient-purple: linear-gradient(135deg, var(--dark-primary) 0%, var(--light-primary) 100%);
+  --color-light: #000000;
+  --color-dark: #ffffff;
   --green-success: #32b043;
   --red-alert: #ff0004;
   --background: #121214;
@@ -224,23 +230,23 @@
     color: transparent;
   }
 
-  .hover-buttons-purple:hover {
+  .hover-buttons-sidebar:hover {
     background-color: var(--light-primary) !important;
   }
 
-  .hover-buttons-red:hover {
+  .hover-button-logout:hover {
     background-color: #ff0004 !important;
   }
 
-  .hover-buttons-purple:hover .hover-text-white {
+  .hover-buttons-sidebar:hover .hover-text-sidebar {
     color: #ffffff !important;
   }
 
-  .hover-buttons-red:hover .hover-text-white {
+  .hover-button-logout:hover .hover-text-sidebar {
     color: #ffffff !important;
   }
 
-  .hover-trigger:hover .hover-color-white {
+  .hover-dropdown-sidebar:hover .hover-text-sidebar {
     color: #ffffff;
   }
 }
