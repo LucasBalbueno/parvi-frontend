@@ -20,6 +20,8 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@/src/shared/ui/shadcn/sidebar/sidebar';
+import { StaticImageData } from 'next/image';
+import Link from 'next/link';
 
 export function NavUser({
   user,
@@ -27,7 +29,7 @@ export function NavUser({
   user: {
     name: string;
     email: string;
-    avatar: string;
+    avatar: string | StaticImageData;
   };
 }) {
   const { isMobile } = useSidebar();
@@ -42,8 +44,11 @@ export function NavUser({
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground bg-background hover:bg-lightpurple hover:text-light transition duration-400"
             >
               <Avatar className="h-8 w-8 rounded-lg">
-                <AvatarImage src={user.avatar} alt={user.name} />
-                <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                <AvatarImage
+                  src={typeof user.avatar === 'string' ? user.avatar : user.avatar.src}
+                  alt={user.name}
+                />
+                <AvatarFallback className="rounded-lg">NA</AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-medium">{user.name}</span>
@@ -61,7 +66,10 @@ export function NavUser({
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                 <Avatar className="h-8 w-8 rounded-lg">
-                  <AvatarImage src={user.avatar} alt={user.name} />
+                  <AvatarImage
+                    src={typeof user.avatar === 'string' ? user.avatar : user.avatar.src}
+                    alt={user.name}
+                  />
                   <AvatarFallback className="rounded-lg">CN</AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
@@ -72,30 +80,40 @@ export function NavUser({
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              {/* <DropdownMenuItem>
-                <Sparkles />
-                Upgrade to Pro
-              </DropdownMenuItem> */}
-              <DropdownMenuItem className="hover-buttons-sidebar transition duration-400">
-                <MdAccountCircle className="text-black hover-text-sidebar transition duration-400" />
-                <p className="hover-text-sidebar transition duration-400">My Account</p>
-              </DropdownMenuItem>
+              <Link href={'/'}>
+                <DropdownMenuItem className="hover-buttons-sidebar transition duration-400">
+                  <Sparkles className="text-black hover-text-sidebar transition duration-400" />
+                  <p className="hover-text-sidebar transition duration-400">Upgrade to Pro</p>
+                </DropdownMenuItem>
+              </Link>
+              <Link href={'/'}>
+                <DropdownMenuItem className="hover-buttons-sidebar transition duration-400">
+                  <MdAccountCircle className="text-black hover-text-sidebar transition duration-400" />
+                  <p className="hover-text-sidebar transition duration-400">My Account</p>
+                </DropdownMenuItem>
+              </Link>
             </DropdownMenuGroup>
             <DropdownMenuGroup>
-              <DropdownMenuItem className="hover-buttons-sidebar transition duration-400">
-                <FaGear className="text-black hover-text-sidebar transition duration-400" />
-                <p className="hover-text-sidebar transition duration-400">Preferences</p>
-              </DropdownMenuItem>
-              <DropdownMenuItem className="hover-buttons-sidebar transition duration-400">
-                <MdLocalActivity className="text-black hover-text-sidebar transition duration-400" />
-                <p className="hover-text-sidebar transition duration-400">Activity</p>
-              </DropdownMenuItem>
+              <Link href={'/'}>
+                <DropdownMenuItem className="hover-buttons-sidebar transition duration-400">
+                  <FaGear className="text-black hover-text-sidebar transition duration-400" />
+                  <p className="hover-text-sidebar transition duration-400">Preferences</p>
+                </DropdownMenuItem>
+              </Link>
+              <Link href={'/'}>
+                <DropdownMenuItem className="hover-buttons-sidebar transition duration-400">
+                  <MdLocalActivity className="text-black hover-text-sidebar transition duration-400" />
+                  <p className="hover-text-sidebar transition duration-400">Activity</p>
+                </DropdownMenuItem>
+              </Link>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="hover-button-logout transition duration-400">
-              <MdLogout className="text-black hover-text-sidebar transition duration-400" />
-              <p className="hover-text-sidebar transition duration-400">Log out</p>
-            </DropdownMenuItem>
+            <Link href={'/'}>
+              <DropdownMenuItem className="hover-button-logout transition duration-400">
+                <MdLogout className="text-black hover-text-sidebar transition duration-400" />
+                <p className="hover-text-sidebar transition duration-400">Log out</p>
+              </DropdownMenuItem>
+            </Link>
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarMenuItem>

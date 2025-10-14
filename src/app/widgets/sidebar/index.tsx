@@ -26,20 +26,14 @@ import {
 } from '@/src/shared/ui/shadcn/sidebar/sidebar';
 import ParviLogo from '@/public/images/LogoParvi.svg';
 import ParviLogoCompact from '@/public/images/LogoParviCompact.svg';
+import DefaultAvatar from '@/public/images/avatarDefaultMan.jpg';
 
 const data = {
   user: {
     name: 'Example user',
     email: 'm@example.com',
-    avatar: '/avatars/shadcn.jpg',
+    avatar: DefaultAvatar,
   },
-  workspaces: [
-    {
-      name: 'Example Manager',
-      logo: LuGalleryVerticalEnd,
-      plan: 'Free',
-    },
-  ],
   navMain: [
     {
       title: 'Dashboard',
