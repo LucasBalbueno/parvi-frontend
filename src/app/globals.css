@@ -47,6 +47,8 @@
 
   --color-lightpurple: var(--light-primary);
   --color-darkpurple: var(--dark-primary);
+  --color-light: var(--color-light);
+  --color-dark: var(--color-dark);
   --color-greensuccess: var(--green-success);
   --color-redalert: var(--red-alert);
   --color-whiteinput: var(--background-input);
@@ -91,6 +93,8 @@
   --light-primary: #623bba;
   --dark-primary: #34318e;
   --gradient-purple: linear-gradient(135deg, var(--dark-primary) 0%, var(--light-primary) 100%);
+  --color-light: #ffffff;
+  --color-dark: #121214;
   --green-success: #32b043;
   --red-alert: #ff0004;
   --background: #f0f2ed;
