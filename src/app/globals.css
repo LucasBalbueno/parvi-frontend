@@ -140,6 +140,8 @@
   --light-primary: #623bba;
   --dark-primary: #34318e;
   --gradient-purple: linear-gradient(135deg, var(--dark-primary) 0%, var(--light-primary) 100%);
+  --color-light: #121214;
+  --color-dark: #ffffff;
   --green-success: #32b043;
   --red-alert: #ff0004;
   --background: #121214;
@@ -226,6 +228,32 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
+  }
+
+  .hover-buttons-sidebar:hover {
+    background-color: var(--light-primary) !important;
+  }
+
+  .hover-button-logout:hover {
+    background-color: #ff0004 !important;
+  }
+
+  .hover-buttons-sidebar:hover .hover-text-sidebar {
+    color: #ffffff !important;
+  }
+
+  .hover-button-logout:hover .hover-text-sidebar {
+    color: #ffffff !important;
+  }
+
+  .hover-dropdown-sidebar:hover .hover-text-sidebar {
+    color: #ffffff;
+  }
+
+  @media (min-width: 768px) {
+    .hover-dropdown-sidebar:hover .arrow-collapsible-icon {
+      color: #ffffff !important;
+    }
   }
 }
 

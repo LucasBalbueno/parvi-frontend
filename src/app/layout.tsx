@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { SidebarProvider, SidebarTrigger } from '../shared/ui/shadcn/sidebar/sidebar';
+import { AppSidebar } from '../shared/ui/sidebar';
 
 export const metadata: Metadata = {
   title: 'Parvi',
@@ -9,7 +11,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-br">
-      <body className={'antialiased'}>{children}</body>
+      <body className={'antialiased'}>
+        <SidebarProvider>
+          <AppSidebar />
+          <main>
+            <SidebarTrigger />
+            {children}
+          </main>
+        </SidebarProvider>
+      </body>
     </html>
   );
 }
