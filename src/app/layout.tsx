@@ -6,6 +6,9 @@ import { AppSidebar } from '../shared/ui/sidebar';
 export const metadata: Metadata = {
   title: 'Parvi',
   description: 'The greatness of small beginnings',
+  icons: {
+    icon: '/images/Favicon.svg',
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
