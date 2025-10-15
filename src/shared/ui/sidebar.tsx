@@ -11,7 +11,6 @@ import {
   IoPaperPlane,
 } from 'react-icons/io5';
 import { MdDashboard, MdQuestionMark } from 'react-icons/md';
-import { LuGalleryVerticalEnd } from 'react-icons/lu';
 
 import { NavMain } from '@/src/shared/ui/shadcn/sidebar/nav-main';
 import { NavSecondary } from '@/src/shared/ui/shadcn/sidebar/nav-secondary';

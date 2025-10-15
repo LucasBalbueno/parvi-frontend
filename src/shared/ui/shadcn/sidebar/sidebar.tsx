@@ -261,7 +261,7 @@ function SidebarTrigger({ className, onClick, ...props }: React.ComponentProps<t
       variant="ghost"
       size="icon"
       className={cn(
-        'absolute bg-lightpurple hover:bg-darkpurple cursor-pointer rounded-r-2xl rounded-l-none top-2.5 transition duration-400',
+        'fixed bg-lightpurple hover:bg-darkpurple cursor-pointer rounded-r-2xl rounded-l-none top-2.5 transition duration-400',
         className,
       )}
       onClick={(event) => {
