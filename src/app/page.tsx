@@ -6,11 +6,31 @@ import nubankIcon from '@/public/images/icons/CardsEBanks/nubank.svg';
 import { ContainerContent } from '../shared/ui/containerContent';
 import { SecondaryButton } from '../shared/ui/buttons/secondaryButton';
 import { AccountItem } from '../shared/ui/accountItem';
+import { CardItem } from '../shared/ui/cardItem';
 
 export default function Home() {
   const accounts = [
     { icon: santanderIcon, name: 'Santander', typeAccount: 'Main account', balance: '10,000,00' },
     { icon: nubankIcon, name: 'Nubank', typeAccount: 'Secondary account', balance: '10,000,00' },
+  ];
+
+  const creditCards = [
+    {
+      icon: santanderIcon,
+      name: 'Visa Santander',
+      cardsEnd: '4321',
+      dueDate: '13/05',
+      limit: '10,000,00',
+      creditBill: '10.000,00',
+    },
+    {
+      icon: nubankIcon,
+      name: 'Debt Nubank',
+      cardsEnd: '1234',
+      dueDate: '13/05',
+      limit: '10,000,00',
+      creditBill: '10.000,00',
+    },
   ];
 
   return (
@@ -81,7 +101,33 @@ export default function Home() {
           </ContainerContent>
 
           <ContainerContent width="calc(65% - 0.5rem)" title="Credit Cards" isCollapsible={true}>
-            <p>Conteúdo...</p>
+            <div className="space-y-1">
+              <div className="flex items-center justify-between">
+                <div className="flex-1"></div>
+                <div className="flex items-center gap-8 text-xs text-dark/50 uppercase tracking-wide">
+                  <span className="w-16 text-center">DUE DATE</span>
+                  <span className="w-24 text-right">LIMIT</span>
+                  <span className="w-24 text-right">CREDIT BILL</span>
+                  <span className="w-8"></span>
+                </div>
+              </div>
+
+              <div className="space-y-5 mb-5">
+                {creditCards.map((account, index) => (
+                  <CardItem
+                    key={index}
+                    icon={account.icon}
+                    name={account.name}
+                    cardsEnd={account.cardsEnd}
+                    dueDate={account.dueDate}
+                    limit={account.limit}
+                    creditBill={account.creditBill}
+                  />
+                ))}
+              </div>
+
+              <SecondaryButton text="Manage" url="#" />
+            </div>
           </ContainerContent>
 
           <ContainerContent width="100%" title="Annual expenses" isCollapsible={true}>
