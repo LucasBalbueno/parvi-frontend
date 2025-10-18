@@ -47,6 +47,7 @@
 
   --color-lightpurple: var(--light-primary);
   --color-darkpurple: var(--dark-primary);
+  --color-graybutton: var(--color-gray);
   --color-light: var(--color-light);
   --color-dark: var(--color-dark);
   --color-greensuccess: var(--green-success);
@@ -93,6 +94,7 @@
   --light-primary: #623bba;
   --dark-primary: #34318e;
   --gradient-purple: linear-gradient(135deg, var(--dark-primary) 0%, var(--light-primary) 100%);
+  --color-gray: #d9d9d9;
   --color-light: #ffffff;
   --color-dark: #121214;
   --green-success: #32b043;
@@ -140,6 +142,7 @@
   --light-primary: #623bba;
   --dark-primary: #34318e;
   --gradient-purple: linear-gradient(135deg, var(--dark-primary) 0%, var(--light-primary) 100%);
+  --color-gray: #d9d9d9;
   --color-light: #121214;
   --color-dark: #ffffff;
   --green-success: #32b043;

@@ -41,7 +41,7 @@ export const ContainerContent = ({
         {isCollapsible && (
           <button
             onClick={toggleExpand}
-            className="p-1 absolute right-0 text-dark/30 hover:text-dark/50 transition-all cursor-pointer "
+            className="p-1 absolute right-0 text-graybutton hover:text-lightpurple transition-all cursor-pointer "
             aria-label={isOpen ? 'Recolher' : 'Expandir'}
           >
             <BiSolidDownArrow

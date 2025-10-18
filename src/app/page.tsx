@@ -1,8 +1,18 @@
-import { ContainerContent } from '../shared/ui/containerContent';
-
 import { FaCirclePlus, FaCircleMinus, FaEyeSlash, FaMoneyBillTransfer } from 'react-icons/fa6';
 
+import santanderIcon from '@/public/images/icons/CardsEBanks/santander.svg';
+import nubankIcon from '@/public/images/icons/CardsEBanks/nubank.svg';
+
+import { ContainerContent } from '../shared/ui/containerContent';
+import { SecondaryButton } from '../shared/ui/buttons/secondaryButton';
+import { AccountItem } from '../shared/ui/accountItem';
+
 export default function Home() {
+  const accounts = [
+    { icon: santanderIcon, name: 'Santander', typeAccount: 'Main account', balance: '10,000,00' },
+    { icon: nubankIcon, name: 'Nubank', typeAccount: 'Secondary account', balance: '10,000,00' },
+  ];
+
   return (
     <main className="min-h-screen w-full bg-background px-6 py-10">
       <div className="w-11/12 mx-auto">
@@ -48,15 +58,29 @@ export default function Home() {
             </div>
           </ContainerContent>
 
-          <ContainerContent width="calc(33.333% - 0.5rem)" title="Accounts" isCollapsible={true}>
-            <p>Conteúdo...</p>
+          <ContainerContent width="calc(35% - 0.5rem)" title="Accounts" isCollapsible={true}>
+            <div className="space-y-1">
+              <div className="text-right">
+                <p className="text-xs text-dark/50 uppercase tracking-wide">BALANCE</p>
+              </div>
+
+              <div className="space-y-5 mb-5">
+                {accounts.map((account, index) => (
+                  <AccountItem
+                    key={index}
+                    icon={account.icon}
+                    name={account.name}
+                    typeAccount={account.typeAccount}
+                    balance={account.balance}
+                  />
+                ))}
+              </div>
+
+              <SecondaryButton text="Manage" url="#" />
+            </div>
           </ContainerContent>
 
-          <ContainerContent
-            width="calc(66.666% - 0.5rem)"
-            title="Credit Cards"
-            isCollapsible={true}
-          >
+          <ContainerContent width="calc(65% - 0.5rem)" title="Credit Cards" isCollapsible={true}>
             <p>Conteúdo...</p>
           </ContainerContent>
 
